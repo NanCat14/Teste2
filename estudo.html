@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Meu Site</title>
+</head>
+
+<style>
+   body{
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #c5e3f8;
+   }
+   .barra{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    padding-top: 20px;
+    text-align: center;
+    background-color: #001F3F;
+    color: white;
+   }
+
+   .botao{
+    display: block;
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #244b72;
+    color: white;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 20px;
+   }
+   .botao:hover{
+    background-color: #5c86b1;
+    width: 115%;
+    text-align: center;
+   }
+
+   .conteudo{
+    display: block;
+    margin-left: 235px;
+    padding: 16px ;
+    font-size: 25px;
+    background-color: white;
+    width: 50%;
+    min-height: 50%;
+    border-top: 30px;
+    border-color: #c5e3f8;
+    border-radius: 20px;
+   }
+
+</style>
+
+<body>
+  
+   <div class="barra" id="barra" >
+      <button href="#" class="botao" onclick="mudaPag('home')">-Início-</button>
+      <button href="#" class="botao" onclick="mudaPag('sobre')">-Sobre-</button>
+      <button href="#" class="botao" onclick="mudaPag('pag1')">-Página 1-</button>
+      <button href="#" class="botao" onclick="mudaPag('pag2')">-Página 2-</button>
+   </div>
+    
+   <div class="conteudo" id="conteudo"> <!--aqui é o conteudo que vai aparecer na pagina-->
+      <h2>Página Inicial</h2>
+      <p>Seja bem vindo ao site programado pelo Renan!</p>
+      <P>Escolha uma página na barra lateral.</P>
+      <P>Por enquanto so funciona os botões de "Início" e "Sobre".</p>
+   </div>
+   
+   <!-- aqui acaba o codigo html, agora é so JS. -->
+   
+   <script>
+      function mudaPag(pag){
+      var conteudo = document.getElementById('conteudo'); //cria uma variavel que substitui no HTML que tem o id 'conteudo'
+      
+      switch (pag) {
+         case 'home': //agora é montar o html aqui dentro
+           conteudo.innerHTML = 
+           '<h2>Página Inicial</h2>' +
+           '<p>Seja bem vindo ao site programado pelo Renan!</p>' +
+           '<P>Escolha uma página na barra lateral.</P>' +
+           '<P>Por enquanto so funciona os botões de "Início" e "Sobre".</p>'
+           break;
+         
+         case 'sobre': 
+           conteudo.innerHTML = 
+            '<h2>Sobre nós:</h2>' +
+            '<p>->Esse é um site/aplicativo criado por Renan Catini Amaral, com a finalidade de avançar nos estudos ek HTML, CSS e JS. <br> Como é um site de testes e estudo, ainda estamos em desenvolvimento e melhorias. <br></p>' +
+            '<p>->Agradeço muito por testar esse site, qualquer FeedBack que voçes queira, dar clique no botão abaixo e me enviem uma mensagem.</p>' +
+            '<div>'+
+            '<p class="feedback"><a href="">Clique aqui para dar seu FeedBack.</a></p>'
+            break;
+         default:
+         break;
+      }      
+      }
+   </script>
+
+</body>
+</html>
